@@ -1,0 +1,14 @@
+services:
+
+  devcontainer:
+    build:
+      context: .
+      dockerfile: java.Dockerfile
+      args:
+        - JDK_VERSION=17
+        - USER_NAME=${USER}
+    volumes:
+      - ../..:/workspaces:cached      
+    environment:
+      - MESSAGE="Hello World!"
+    command: sleep infinity
